@@ -1,23 +1,10 @@
-file-io-demo
-===========
+Embedded Lua
+============
 
-Demonstrates posix like devive IO.
+Demonstration of Lua running in interactive mode in the lollyjar shell.
 
-the demo:
-
-  - installs the console USART as a readonly device in /dev/ttyS0
-  - attaches a logger to to STDOUT (which happens to be the console USART tx device)
- 
-then loops:
- 
- - reads from that device
- - if there is data
-	 - stores it to a file "datafile.txt"
-	 - then back to the top
- - if not
-	 - logs the size of the file to STDOUT
-	 - waits a second
-	 - then back to the top
+  - runs the lollyjar shell on an stm32 serial port (115200baud)
+  - exposes lua as a shell command. 
 
 boards
 ------
@@ -31,12 +18,4 @@ boards
 test
 ----
 
- - run a serial-terminal program to monitor the board console output.
-
- 
-``` bash
-	
-	# assumes you have pyserial installed, and that you use a USB serial port cable
-	miniterm.py -p /dev/ttyUSB0 -b 115200
-
-```
+ - run a serial-terminal program, hit enter a few times then enter "lua".
