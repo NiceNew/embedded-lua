@@ -1,9 +1,9 @@
 Embedded Lua
 ============
 
-Demonstration of Lua running in interactive mode in the lollyjar shell.
+Demonstration of Lua running in interactive mode in the like-posix shell.
 
-  - runs the lollyjar shell on an stm32 serial port (115200baud)
+  - runs the like-posix shell on an stm32 serial port (115200baud)
   - exposes lua as a shell command. 
 
 boards

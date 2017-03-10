@@ -49,6 +49,8 @@ SOURCE += $(LUA_SRC)/linit.c
 CFLAGS = -I $(LUA_SRC)
 CFLAGS += -DLUA_32BITS
 
+CFLAGS += -DSHELL_TASK_STACK_SIZE=4096 # make this big enough to acommodate lua
+
 USE_PTHREADS= 1
 USE_FREERTOS = 1
 USE_MINLIBC = 1
@@ -68,5 +70,5 @@ USE_SHELL = 1
 USE_FULL_ASSERT = 1
 DEBUG_PRINTF_EXCEPTIONS = 1
 
-STM32DEVSUPPORTDIR = ../lollyjar
+STM32DEVSUPPORTDIR = ../like-posix
 include $(STM32DEVSUPPORTDIR)/build-env/setup.mk

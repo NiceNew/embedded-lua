@@ -39,8 +39,6 @@
 #ifndef LIKEPOSIX_CONFIG_H_
 #define LIKEPOSIX_CONFIG_H_
 
-#include "usart.h"
-
 /**
  * fudge factor for the file table, presently can be any value higher than STDIN_FILENO...
  */
@@ -67,10 +65,5 @@
  */
 #define ENABLE_LIKEPOSIX_SOCKETS    0
 
-/**
- * define the character io functions for stdin, stdout and stderr
- */
-#define __stdio_putc(c) usart_putc(c)
-#define __stdio_getc() usart_getc()
 
 #endif /* LIKEPOSIX_CONFIG_H_ */
