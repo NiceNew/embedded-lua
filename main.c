@@ -42,7 +42,7 @@ void init_hardware(disk_interface_t* sdcard_interface, const char* serial_dev)
     sdcard_mount(sdcard_interface, 0);
 
     log_info(NULL, "init serial on %s", serial_dev);
-    usart_create_dev(serial_dev, USART2, USART_FULLDUPLEX, 115200, 128);
+    usart_create_dev(serial_dev, CONSOLE_USART, USART_FULLDUPLEX, 115200, 128);
 }
 
 void init_serial_shell(shellserver_t* shell, const char* serial_dev, shell_cmd_func_t luafunc, shell_cmd_t* luacmd)
@@ -63,7 +63,6 @@ int main(void)
 {
 	init_hardware(&sddisk, "/dev/ttyS0");
     init_serial_shell(&serial_shell, "/dev/ttyS0", lua_func, &lua_cmd);
-    sleep(100000);
     pthread_exit(0);
     return 0;
 }
