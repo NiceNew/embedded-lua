@@ -70,5 +70,5 @@ USE_SHELL = 1
 USE_FULL_ASSERT = 1
 DEBUG_PRINTF_EXCEPTIONS = 1
 
-STM32DEVSUPPORTDIR = ../like-posix
-include $(STM32DEVSUPPORTDIR)/build-env/setup.mk
+LIKEPOSIX_DIR = ../like-posix
+include $(LIKEPOSIX_DIR)/build-env/setup.mk
