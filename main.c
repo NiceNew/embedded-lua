@@ -27,9 +27,8 @@ static shell_cmd_t lua_cmd;
 
 int lua_func(int fdes, const char** args, unsigned char nargs)
 {
-	char* a[] = {"lua", NULL};
     FILE* f = fdopen(fdes, "r+");
-    lua_main(f, f, 1, a);
+    lua_main(f, f, nargs, args);
     fclose(f);
     return SHELL_CMD_EXIT;
 }
